@@ -1,6 +1,6 @@
 # my_website
 my-website/
-index.html
+├── index.htmlindex.html
 ├── second-page.html
 ├── style.css
 └── images/
