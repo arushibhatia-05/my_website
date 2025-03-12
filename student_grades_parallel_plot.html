@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-b893396a9932c7879ee222f038f095f3"}, "mark": {"type": "line"}, "encoding": {"color": {"field": "Student", "title": "Student", "type": "nominal"}, "tooltip": [{"field": "Student", "type": "nominal"}, {"field": "Subject", "type": "nominal"}, {"field": "Grade", "type": "quantitative"}], "x": {"field": "Subject", "title": "Subject", "type": "nominal"}, "y": {"field": "Grade", "title": "Grade", "type": "quantitative"}}, "title": "Parallel Coordinates Plot for Student Grades", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-b893396a9932c7879ee222f038f095f3": [{"Subject": "Math", "Student": "Student 1", "Grade": 85}, {"Subject": "Physics", "Student": "Student 1", "Grade": 95}, {"Subject": "Dance", "Student": "Student 1", "Grade": 70}, {"Subject": "Drama", "Student": "Student 1", "Grade": 65}, {"Subject": "Math", "Student": "Student 2", "Grade": 90}, {"Subject": "Physics", "Student": "Student 2", "Grade": 80}, {"Subject": "Dance", "Student": "Student 2", "Grade": 60}, {"Subject": "Drama", "Student": "Student 2", "Grade": 50}, {"Subject": "Math", "Student": "Student 3", "Grade": 65}, {"Subject": "Physics", "Student": "Student 3", "Grade": 50}, {"Subject": "Dance", "Student": "Student 3", "Grade": 90}, {"Subject": "Drama", "Student": "Student 3", "Grade": 90}, {"Subject": "Math", "Student": "Student 4", "Grade": 50}, {"Subject": "Physics", "Student": "Student 4", "Grade": 40}, {"Subject": "Dance", "Student": "Student 4", "Grade": 95}, {"Subject": "Drama", "Student": "Student 4", "Grade": 80}, {"Subject": "Math", "Student": "Student 5", "Grade": 40}, {"Subject": "Physics", "Student": "Student 5", "Grade": 60}, {"Subject": "Dance", "Student": "Student 5", "Grade": 80}, {"Subject": "Drama", "Student": "Student 5", "Grade": 90}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
